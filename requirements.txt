@@ -1,0 +1,5 @@
+ultralytics
+roboflow
+pyyaml
+opencv-python-headless
+matplotlib

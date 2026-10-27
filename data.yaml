@@ -1,0 +1,6 @@
+# 코랩 기준 경로입니다. 다른 환경이면 path를 데이터가 있는 위치로 바꾸세요.
+path: /content/cone_merged
+train: train/images
+val: valid/images
+nc: 1
+names: ['cone']

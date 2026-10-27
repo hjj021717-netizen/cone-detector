@@ -1,0 +1,20 @@
+# 데이터는 올리지 않음 (용량, 라이선스)
+data/
+raw/
+cone_merged/
+backup/
+*.zip
+runs/
+
+# 모델: best.pt만 올림
+*.pt
+!best.pt
+*.onnx
+
+# 비밀 정보
+.env
+*.key
+
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
