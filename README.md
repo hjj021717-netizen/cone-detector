@@ -48,3 +48,12 @@ python train.py                         # 학습
   - 가까운 콘(fs_, 박스 높이가 이미지의 10% 이상): Recall 0.853
 - 이 모델은 대회장에서 촬영한 이미지로 학습한 것이 아닙니다. 현장 데이터로 파인튜닝하면 성능이 달라질 수 있습니다.
 - 접촉 패널티를 줄이려면 놓침(Recall)이 중요하므로, conf 임계값을 낮춰서 사용하는 것을 권장합니다.
+
+### 검출만 하기 (위치 계산 없음): cone_detector_node.py
+
+TF나 카메라 실측값 없이, 영상에서 콘을 찾아 `/cones/detections`(JSON)로 내보냅니다. 입력은 ROS 이미지 토픽 또는 MJPEG 중 하나입니다.
+
+    python3 cone_detector_node.py --ros-args -p image_topic:=/frontvideostream -p model_path:=cone_best.pt
+    python3 cone_detector_node.py --ros-args -p stream_url:=http://<IP>:8090/stream -p model_path:=cone_best.pt
+
+확인: `ros2 topic echo /cones/detections --once`
